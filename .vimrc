@@ -72,6 +72,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdcommenter'
+Plug 'mg979/vim-visual-multi'
 
 call plug#end()
 set mouse=a
