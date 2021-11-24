@@ -49,6 +49,7 @@ filetype plugin indent on
 
 au InsertLeave *.go,*.sh,*.php write
 call plug#begin('~/.vim/plugged')
+Plug 'buoto/gotests-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe'
 Plug 'fatih/vim-go', { 'tag': '*' }
@@ -73,7 +74,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdcommenter'
 Plug 'mg979/vim-visual-multi'
-
 call plug#end()
 set mouse=a
 
@@ -152,3 +152,31 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
+
+
+tnoremap <Esc><Esc> <C-\><C-N>
+
+tnoremap <C-V><Esc> <Esc>
+
+set completeopt=longest,menuone
+
+
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+let g:ycm_auto_hover = ''
+let g:ycm_complete_in_comments = 1
+let g:ycm_filetype_whitelist = {
+	  \ 'c': 1,
+	  \ 'cpp': 1,
+	  \ 'python': 1,
+	  \ 'vim': 1,
+	  \ 'go': 1,
+	  \ 'sh': 1,
+	  \ 'zsh': 1,
+	  \ }
+let g:ycm_goto_buffer_command = 'split-or-existing-window'
+let g:ycm_key_invoke_completion = '<c-z>'
+
+let g:ycm_key_list_stop_completion = ['<CR>']
+
+nmap <Leader>o o<Esc>
